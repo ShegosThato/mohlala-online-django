@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block navbar %}
+{% endblock navbar %}
+
+{% block content %}
+<img src="{{ customer.display_pic.url }}" alt="Profile pic">
+
+{{ customer.first_name }}
+{{ customer.last_name }}
+{{ customer.email }}
+{{ customer.id_number }}
+<hr>
+
+{% endblock content %}

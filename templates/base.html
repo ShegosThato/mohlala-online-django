@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'bootstrap4/css/material-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    {% block title%}
+    <title>Mohlala Online</title>
+    {% endblock title %}
+</head>
+
+<body>
+    {% block navbar %}
+    {% include 'navbar.html'%}
+    {% endblock navbar %}
+    {% block content %}{% endblock content%}
+    {% block footer %}{% endblock footer%}
+    <script defer src="{% static 'bootstrap4/js/jquery.min.js' %}"></script>
+    <script defer src="{% static 'bootstrap4/js/bootstrap.bundle.js' %}"></script>
+</body>
+
+</html>

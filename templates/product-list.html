@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+    {% for product in object_list %}
+        <h2>{{ product.title }}</h2>
+        <img src="{{ product.product_pic.url }} " alt="{{ product.title}}">
+    {% endfor %}
+    </ul>
+{% endblock %}
