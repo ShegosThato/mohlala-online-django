@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .blog-header {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -42,4 +48,16 @@
   .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+  }
+
+
+  /** MOBILE **/
+  @media (max-width: 575.98px)  {
+    #content-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    
   }

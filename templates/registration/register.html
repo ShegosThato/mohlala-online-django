@@ -1,13 +1,97 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-<h1>Register</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">
-        Register
-    </button>
-</form>
-<p>Already have an acccount? <a href="{% url 'login' %}">Login here</a></p>
+<!--header START-->
+<div class="container">
+    <div class="jumbotron text-center">
+        <h3>Welcome to our store, Register below</h3>
+        <p><small>By filling in the form, you accepting our <button class="btn btn-outline-danger btn-sm"
+                    data-toggle="modal" data-target="#termsModalScrollable">terms and conditions.</button></small>
+        </p>
+        <p><a href="{% url 'login' %}"><small>Already have an account? Log in</small></a> | <a href="#"><small>Contact
+                    Us</small></a></p>
+
+    </div>
+</div>
+<!--header END-->
+
+<section class="container text-center">
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
+<!-- Terms Modal START-->
+<!-- Modal -->
+<div class="modal fade" id="termsModalScrollable" tabindex="-1" role="dialog"
+    aria-labelledby="termsModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsModalScrollableTitle">Terms & Conditions Agreement</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Membership Agreement</h4>
+                <h5>- "Mohlala" means Mohlala Online Store</h5>
+                <hr class="my-2">
+                <ol>
+                    <li>
+                        <p>Membership of the store shall be only for the signed member and may not be transferred or
+                            assigned to any third party whatsoever except on legal grounds.</p>
+                    </li>
+                    <li>
+                        <p>Mohlala shall be entitled to make improvements to the store and members shall have no claim
+                            whatsoever and howsoever arising against Mohlala as a result thereof.</p>
+                    </li>
+                    <li>
+                        <p>Mohlala shall be entitled to deny the member access to train in the event of the member
+                            failing to pay his/her monthly tag fee.</p>
+                    </li>
+                    <li>
+                        <p>Members shall bring their own water bottle and towel.</p>
+                    </li>
+                    <li>
+                        <p>Mohlala sessions take place from Monday to Friday mornings and afternoons but time differs
+                            upon selected classes.</p>
+                    </li>
+                    <li>
+                        <p>Extra classes are not included on the monthly tag fee and private sessions vary from
+                            distance, number of clients, and duration of the session.</p>
+                    </li>
+                    <li>
+                        <p>Members shall pay the monthly tag fee regardless of the member not coming to train as
+                            long as the contract has not been cancelled.</p>
+                    </li>
+                    <li>
+                        <p>Members shall respect other members and shall not bad mouth or harass any form or way.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Members shall not judge other members based on the way they look, dress, body shape etc.
+                        </p>
+                    </li>
+                    <li>
+                        <p></p>
+                    </li>
+                </ol>
+                <hr class="my-2">
+                <h4>Termination of Membership Agreement</h4>
+                <p>The cancellation of this agreement must be solely the main member of the signed agreement to
+                    proceed with the termination. Members terminating the agreement must acknowledge that they will
+                    have to pay for that month the termination is made thereof.</p>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Terms Modal END-->
 {% endblock content %}

@@ -15,13 +15,13 @@
 </head>
 
 <body>
-    {% block navbar %}
     {% include 'navbar.html'%}
-    {% endblock navbar %}
     {% block content %}{% endblock content%}
     {% block footer %}{% endblock footer%}
+    {% include 'bottom-nav.html'%}
     <script defer src="{% static 'bootstrap4/js/jquery.min.js' %}"></script>
     <script defer src="{% static 'bootstrap4/js/bootstrap.bundle.js' %}"></script>
+    <script defer src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

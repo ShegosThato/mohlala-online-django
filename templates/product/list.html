@@ -1,19 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}
-{% if category %}{{ category.name }} {% else %} Products {% endif %}
-{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row" style="margin-top: 6%">
+    <div class="row" style="margin-top: 6%" id="content-row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-8 col-xs-10 blog-main">
 
             <div class="blog-post">
                 <div class="row">
                     {% for product in products %}
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6 col-xs-6">
                         <div class="thumbnail">
                             <a href="{{ product.get_absolute_url }}">
                                 <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}"
@@ -35,7 +32,9 @@
 
         </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+        <!--col-sm-3 col-sm-offset-1-->
+        <div class="d-none d-lg-flex blog-sidebar">
             <div class="sidebar-module">
                 <h4>Categories</h4>
                 <ol class="list-unstyled">
