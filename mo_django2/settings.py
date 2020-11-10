@@ -25,7 +25,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1)+_qpf9+a&+)j#kw#1$k^diyc)lpy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mohlalastore.herokuapp.com',
+    '127.0.0.1:8000',
+]
 
 
 # Application definition
