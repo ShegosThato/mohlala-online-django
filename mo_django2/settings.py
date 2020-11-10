@@ -31,19 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # user apps
-    'core',
-    'cart',
-    'orders',
-    'accounts',
-    'crispy_forms',
-    #django apps
+     #django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # user apps
+    'core',
+    'cart',
+    'orders',
+    'accounts',
+    'crispy_forms',
     
 ]
 
@@ -151,6 +151,6 @@ CART_SESSION_ID = 'cart'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Heroku: Update database configuration from $DATABASE_URL.
-#import dj_database_url
-#db_from_env = dj_database_url.config(conn_max_age=500)
-#DATABASES['default'].update(db_from_env)
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
