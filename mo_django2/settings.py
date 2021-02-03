@@ -20,14 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1)+_qpf9+a&+)j#kw#1$k^diyc)lpy(=xb2!^lw!+dnq_&!4fg')
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '1)+_qpf9+a&+)j#kw#1$k^diyc)lpy(=xb2!^lw!+dnq_&!4fg')
+SECRET_KEY = '1)+_qpf9+a&+)j#kw#1$k^diyc)lpy(=xb2!^lw!+dnq_&!4fg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'mohlalastore.herokuapp.com',
-    '127.0.0.1:8000',
+    '127.0.0.1',
 ]
 
 
@@ -52,7 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,11 +139,12 @@ LOGIN_REDIRECT_URL = 'core:product_list'
 LOGOUT_REDIRECT_URL = 'core:product_list'
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -154,6 +157,8 @@ CART_SESSION_ID = 'cart'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Heroku: Update database configuration from $DATABASE_URL.
+"""
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+"""

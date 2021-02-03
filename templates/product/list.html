@@ -11,12 +11,13 @@
                 <div class="row">
                     {% for product in products %}
                     <div class="col-md-4 col-sm-6 col-xs-6">
-                        <div class="thumbnail">
+                        <div class="thumbnail justify-content-center">
                             <a href="{{ product.get_absolute_url }}">
                                 <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}"
-                                    alt="..." style="height: 130px; width: auto">
+                                    alt="..." style="height: 130px; width: auto" class="img-fluid">
                             </a>
                             <div class="caption">
+
                                 <h3 class="text-center">
                                     <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                                 </h3>

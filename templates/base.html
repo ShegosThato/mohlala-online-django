@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static%}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css"
-        integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <link rel="stylesheet" href="{% static 'fontawesome-web/css/all.css'%}">
     {% block title%}
@@ -18,17 +17,25 @@
 <body>
     {% include 'navbar.html'%}
     {% block content %}{% endblock content%}
-    {% block footer %}{% endblock footer%}
+    {% block footer %}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Mohlala Online
+                    
+                    - Designed and developed by <a rel="nofollow" href="https://shegosthato.github.io/site" class="tm-text-link" target="_parent">Thato Mashego</a></p>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock footer%}
     {% include 'bottom-nav.html'%}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script defer src="{% static 'bootstrap/js/jquery.min.js'%}"></script>
+    <script defer src="{% static 'bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
 </body>
 

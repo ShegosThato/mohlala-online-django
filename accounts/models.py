@@ -8,8 +8,8 @@ class Customer(AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=255,verbose_name="email address", unique=True)
-    id_number = models.IntegerField(default=951225339086)
-    contact_info = models.IntegerField(default=1112223333)
+    id_number = models.IntegerField()
+    contact_info = models.IntegerField()
     display_pic = models.ImageField(upload_to="profiles", default="user.jpg")
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name', 'id_number', 'contact_info']
 

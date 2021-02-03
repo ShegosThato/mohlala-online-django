@@ -54,10 +54,17 @@
   /** MOBILE **/
   @media (max-width: 575.98px)  {
     #content-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    .blog-main {
+      font-size: 1.5em !important;
+      line-height: normal !important;
+    }
+    .blog-post {
+      margin-bottom: 5% !important;
     }
     
   }
